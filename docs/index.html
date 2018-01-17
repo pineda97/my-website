@@ -10,9 +10,6 @@
                 padding-top: 10px;
                 border-radius: 20%;
             }
-            #alexis{
-                font-size: 2px;
-            }
             #first-info{
                 position: relative;
                 left: 135px;
@@ -63,59 +60,135 @@
             a::before{
                 color: #1E90FF;
             }
+            #end{
+                margin-top: 200px;
+            }
+            #backtop{
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                z-index: 100;
+                padding: 30px;
+            }
+            #back{
+                height: 35px;
+            }
+            #tabla{
+                width: 500px;
+            }
+            #button{
+                margin-left: 25px;
+                margin-top: 10px;
+            }
+            #fav-frinds{
+                color: black;
+            }
         </style>
     </head>
     <body>
-        <img src="my-img.jpg">
-        <div id="info">
-            <div id="first-info">
-                <h1>Jorge Pineda</h1>
-                <p id="first-p">My name is Jorge Pineda. I was born and raised in Guadalajara, Jalisco (to be specific in Zapopan). I've lived in 3 different places: Altamira, Santa Mago, and Solares (where I currently live). 
-                I currently study Software Engineering in Universidad Autónoma de Guadalajara. I've studied there since Elementary School. I've made a lot of friends there. </p>
-            </div>
-            <div id="rest-body">
-                <p>In there I've met most of my current <a href="#frinds">friends</a> but not all of them are listed below. <br> I'm totally enjoying College, I cannot stress enough how many times I've met people that feel like they don't fit in, but that's not my case. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac risus facilisis, tincidunt mauris rutrum, fermentum ligula. Sed odio orci, interdum sed turpis sed, pretium pellentesque purus. Nullam semper quam non risus condimentum, sed eleifend mi finibus. Proin efficitur nisi diam. Donec et tempus magna. Duis efficitur lorem id lobortis ornare. Cras iaculis enim a laoreet iaculis. Suspendisse tempor malesuada lacus, in tempor arcu scelerisque sit amet. <br> <br>
-
-                    Integer maximus risus sit amet nisl tristique sollicitudin. Maecenas pharetra a nisi nec scelerisque. Phasellus ultrices dignissim augue, ut aliquet nisl ullamcorper sed. Curabitur commodo urna enim, at tincidunt dui dignissim a. Pellentesque varius ante non nisi malesuada, consequat tempus orci congue. Vivamus vulputate leo vel sem porttitor mollis. Cras imperdiet blandit cursus. Nullam placerat bibendum maximus. Cras volutpat lorem vel odio lacinia varius. Quisque sit amet urna a eros accumsan cursus sed a nibh. Donec eget ante justo. Duis posuere lorem vel arcu euismod, sit amet eleifend nulla tristique. Sed nec odio semper, suscipit orci non, lacinia felis. Etiam nec lacus quis est venenatis viverra. <br> <br>
+            <audio src="mov-naranja.mp3" autoplay>
+                    <p>If you are reading this, it is because your browser does not support the audio element.     </p>
+                    <embed src="mov-naranja.mp3" width="180" height="90" hidden="true" />
+                    </audio>
+        <div id="evr">
+            <script>
+                function changeBck() {
+                    if(document.getElementById("info").style.backgroundColor != "pink"){
+                        document.getElementById("info").style.backgroundColor = "pink";
+                    }else{
+                        document.getElementById("info").style.backgroundColor = "#F1F1F1";
+                    }
+                }
+                function strobo(){
+                    var myVar = null;
+                    if(document.getElementById("fav-frinds").style.color == "black"){
+                        var myVar =setInterval(changeColor,500);
+                    }else if(document.getElementById("fav-frinds").style.color != "black"){
+                        window.clearInterval(myVar);
+                        document.getElementById("fav-frinds").style.color = "black";
+                    document.getElementById("fav-title").style.color = "black";
+                    document.getElementById("title").style.color = "black";
+                    }
+                }
+                function changeColor(){
+                    document.getElementById("fav-frinds").style.color = getRandomColor();
+                    document.getElementById("fav-title").style.color = getRandomColor();
+                    document.getElementById("title").style.color = getRandomColor();
                     
-                    Sed aliquam sit amet diam vitae scelerisque. Pellentesque at eros condimentum ante iaculis tristique. Duis maximus justo vitae dui posuere commodo. Curabitur hendrerit lorem vel sem pretium, et posuere ex tristique. Cras a mollis neque. Vivamus metus mauris, malesuada sit amet vestibulum ut, pulvinar quis eros. Morbi laoreet sapien velit, nec tempor eros bibendum ac. Vestibulum condimentum arcu id massa fermentum dapibus. In fermentum rutrum venenatis. Nulla vitae nibh rutrum, mattis nisi eu, volutpat tellus. Cras dapibus elit id metus ultrices, id bibendum leo tempor. Fusce ultricies convallis mi, a ultrices lorem gravida ac. Pellentesque at malesuada sapien. Phasellus hendrerit, urna at auctor commodo, tortor massa condimentum velit, sed hendrerit elit ipsum in lacus. Etiam id fermentum mauris.</p>
+                }
+                function getRandomColor() {
+                    var letters = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                }
+            </script>
+            <span title="This is me!" id="imagen"><img src="my-img.jpg" onclick="strobo()"></span>
+            <div id="backtop">
+                <a href="#imagen"><img id="back" src="backtop.png"></a> 
             </div>
-        </div>
-        <br>
-        <div id="frinds" class="floatle">
-            <h3>Friends list</h3>
-            <ul>
-                <li id="alexis"><a target="_blank" href="https://shexys97.github.io/autobiography/">Alexis Glez</a></li>
-                <li><a target="_blank" href="https://diegohdezc.github.io/diego_bio/">Diego Hdez</a></li>
-                <li>Oscar Rmz</li>
-                <li>Alfonso Torres</li>
-                <li>Diego Rolón</li>
-            </ul>
-        </div>
-        <div id="fav-song" class="floatle">
-            <h3>My Favorite song</h3>
-            <iframe src="https://www.youtube.com/embed/Ti2pA5JgrMI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="clear"></div>
-        <div class="floatle" id="skill-set">
-            <table>
-                <tr>
-                    <th>Skill</th>
-                    <th>Knowledge %</th>
-                </tr>
-                <tr>
-                    <td>Rubiks cube solving</td>
-                    <td>100%</td>
-                </tr>
-                <tr>
-                    <td>Cooking</td>
-                    <td>10%</td>
-                </tr>
-                <tr>
-                    <td>Driving</td>
-                    <td>120%</td>
-                </tr>
-            </table>
+            <div id="info">
+                <div id="first-info">
+                    <h1 id="title" class="floatle">Jorge Pineda</h1>
+                    <div><button id="button" onclick="changeBck()">Click me!</button></div>
+                    
+                    <br>
+                    <p id="first-p">My name is Jorge Pineda. I was born and raised in Guadalajara, Jalisco (to be specific in Zapopan). I've lived in 3 different places: Altamira, Santa Mago, and Solares (where I currently live). 
+                    I currently study Software Engineering in Universidad Autónoma de Guadalajara. I've studied there since Elementary School. I've made a lot of friends there. </p>
+                </div>
+                
+                <div id="rest-body">
+                    <p>In there I've met most of my current <a href="#frinds">friends</a> but not all of them are listed below. <br> I'm totally enjoying College, I cannot stress enough how many times I've met people that feel like they don't fit in, but that's not my case. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac risus facilisis, tincidunt mauris rutrum, fermentum ligula. Sed odio orci, interdum sed turpis sed, pretium pellentesque purus. Nullam semper quam non risus condimentum, sed eleifend mi finibus. Proin efficitur nisi diam. Donec et tempus magna. Duis efficitur lorem id lobortis ornare. Cras iaculis enim a laoreet iaculis. Suspendisse tempor malesuada lacus, in tempor arcu scelerisque sit amet. <br> <br>
+
+                        Integer maximus risus sit amet nisl tristique sollicitudin. Maecenas pharetra a nisi nec scelerisque. Phasellus ultrices dignissim augue, ut aliquet nisl ullamcorper sed. Curabitur commodo urna enim, at tincidunt dui dignissim a. Pellentesque varius ante non nisi malesuada, consequat tempus orci congue. Vivamus vulputate leo vel sem porttitor mollis. Cras imperdiet blandit cursus. Nullam placerat bibendum maximus. Cras volutpat lorem vel odio lacinia varius. Quisque sit amet urna a eros accumsan cursus sed a nibh. Donec eget ante justo. Duis posuere lorem vel arcu euismod, sit amet eleifend nulla tristique. Sed nec odio semper, suscipit orci non, lacinia felis. Etiam nec lacus quis est venenatis viverra. <br> <br>
+                        
+                        Sed aliquam sit amet diam vitae scelerisque. Pellentesque at eros condimentum ante iaculis tristique. Duis maximus justo vitae dui posuere commodo. Curabitur hendrerit lorem vel sem pretium, et posuere ex tristique. Cras a mollis neque. Vivamus metus mauris, malesuada sit amet vestibulum ut, pulvinar quis eros. Morbi laoreet sapien velit, nec tempor eros bibendum ac. Vestibulum condimentum arcu id massa fermentum dapibus. In fermentum rutrum venenatis. <br><br> Nulla vitae nibh rutrum, mattis nisi eu, volutpat tellus. Cras dapibus elit id metus ultrices, id bibendum leo tempor. Fusce ultricies convallis mi, a ultrices lorem gravida ac. Pellentesque at malesuada sapien. Phasellus hendrerit, urna at auctor commodo, tortor massa condimentum velit, sed hendrerit elit ipsum in lacus. Etiam id fermentum mauris. <br><br>
+                    
+                        Sed aliquam sit amet diam vitae scelerisque. Pellentesque at eros condimentum ante iaculis tristique. Duis maximus justo vitae dui posuere commodo. Curabitur hendrerit lorem vel sem pretium, et posuere ex tristique. Cras a mollis neque. Vivamus metus mauris, malesuada sit amet vestibulum ut, pulvinar quis eros. Morbi laoreet sapien velit, nec tempor eros bibendum ac. Vestibulum condimentum arcu id massa fermentum dapibus. In fermentum rutrum venenatis. <br><br> Nulla vitae nibh rutrum, mattis nisi eu, volutpat tellus. Cras dapibus elit id metus ultrices, id bibendum leo tempor. Fusce ultricies convallis mi, a ultrices lorem gravida ac. Pellentesque at malesuada sapien. Phasellus hendrerit, urna at auctor commodo, tortor massa condimentum velit, sed hendrerit elit ipsum in lacus. Etiam id fermentum mauris.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div id="frinds" class="floatle">
+                <h3 id="fav-frinds">Friends list</h3>
+                <ul>
+                    <li><a target="_blank" href="https://shexys97.github.io/autobiography/">Alexis Glez</a></li>
+                    <li><a target="_blank" href="https://diegohdezc.github.io/diego_bio/">Diego Hdez</a></li>
+                    <li><a target="_blank" href="https://oire0297.github.io/autobiography/">Oscar Rmz</a></li>
+                    <li><a target="_blank" href="https://97torres.github.io/alfonso/">Alfonso Torres</a></li>
+                    <li><a href="">Diego Rolón</a></li>
+                </ul>
+            </div>
+            <div id="fav-song" class="floatle">
+                <h3 id="fav-title">My Favorite song</h3>
+                <iframe src="https://www.youtube.com/embed/Ti2pA5JgrMI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="clear"></div>
+            <div class="floatle" id="skill-set">
+                <table border="1" id="tabla">
+                    <tr>
+                        <th>Skill</th>
+                        <th>Knowledge %</th>
+                    </tr>
+                    <tr>
+                        <td>Rubiks cube solving</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Cooking</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Driving</td>
+                        <td>120%</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="end">
+                <marquee behavior="Scroll" direction="">End of the website, thanks for visiting!</marquee>
+            </div>
         </div>
     </body>
 </html>
