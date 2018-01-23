@@ -15,7 +15,14 @@
                     }
                 }
                 function strobo(){
-                    var myVar =setInterval(changeColor,500);
+                    var myVar = 0;
+                    if(myVar == 0)
+                    {
+                        myVar=setInterval(changeColor,500);
+                    }else{
+                        clearInterval(myVar);
+                    }
+                    
                 }
                 function changeColor(){
                     document.getElementById("fav-frinds").style.color = getRandomColor();
