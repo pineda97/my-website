@@ -5,10 +5,6 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-            <!--<audio src="mov-naranja.mp3" autoplay>
-                    <p>If you are reading this, it is because your browser does not support the audio element.     </p>
-                    <embed src="mov-naranja.mp3" width="180" height="90" hidden="true" />
-                    </audio>-->
         <div id="evr">
             <script>
                 function changeBck() {
@@ -19,7 +15,7 @@
                     }
                 }
                 function strobo(){
-                    var myVar =setTimeout(changeColor,2000);
+                    var myVar =setInterval(changeColor,500);
                 }
                 function changeColor(){
                     document.getElementById("fav-frinds").style.color = getRandomColor();
