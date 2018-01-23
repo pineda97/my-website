@@ -8,6 +8,7 @@
         <div id="evr">
             <script>
                 var myVar = 0;
+                var mySwitch = 0;
                 function changeBck() {
                     if(document.getElementById("info").style.backgroundColor != "pink"){
                         document.getElementById("info").style.backgroundColor = "pink";
@@ -17,15 +18,20 @@
                 }
                 function strobo(){
                     
-                    if(myVar == 0)
+                    if(mySwitch == 0)
                     {
                         myVar=setInterval(changeColor,500);
-                    }else{
+                    }else if(mySwitch == 1){
                         clearInterval(myVar);
+                        document.getElementById("fav-frinds").style.color = "#000000";
+                        document.getElementById("fav-title").style.color = "#000000";
+                        document.getElementById("title").style.color = "#000000";
+                        mySwitch=0;
                     }
                     
                 }
                 function changeColor(){
+                    mySwitch = 1;
                     document.getElementById("fav-frinds").style.color = getRandomColor();
                     document.getElementById("fav-title").style.color = getRandomColor();
                     document.getElementById("title").style.color = getRandomColor();
