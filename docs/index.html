@@ -7,6 +7,7 @@
     <body>
         <div id="evr">
             <script>
+                var myVar = 0;
                 function changeBck() {
                     if(document.getElementById("info").style.backgroundColor != "pink"){
                         document.getElementById("info").style.backgroundColor = "pink";
@@ -15,7 +16,7 @@
                     }
                 }
                 function strobo(){
-                    var myVar = 0;
+                    
                     if(myVar == 0)
                     {
                         myVar=setInterval(changeColor,500);
